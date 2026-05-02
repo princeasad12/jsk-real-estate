@@ -318,6 +318,105 @@ export default function Home() {
           </div>
         </div>
       </section>
+{/* ─── TESTIMONIALS ─── */}
+<section className="py-24 bg-olive-muted/30">
+  <div className="max-w-6xl mx-auto px-6">
+    <motion.div
+      variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+      className="text-center mb-16"
+    >
+      <p className="text-olive text-sm font-semibold uppercase tracking-widest mb-2">Success Stories</p>
+      <h2 className="font-serif text-4xl font-light text-charcoal">
+        What Our <span className="italic text-olive">Clients Say</span>
+      </h2>
+    </motion.div>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {[
+        { name: "Ahmed Khan", role: "Villa Owner", text: "JSK Modern helped me find the perfect investment in DHA. Their transparency is unmatched." },
+        { name: "Sarah Z.", role: "Expat Client", text: "Moving from Dubai to Beirut was stressful, but their team handled everything perfectly." },
+        { name: "Hamza Malik", role: "Business Man", text: "The MRICS certification really shows in their professional approach. Best in the market." }
+      ].map((t, i) => (
+        <motion.div
+          key={i}
+          variants={fadeUp} initial="hidden" whileInView="visible" custom={i * 0.1}
+          className="bg-white p-8 rounded-3xl shadow-sm border border-gray-border"
+        >
+          <div className="text-olive text-2xl mb-4">"</div>
+          <p className="text-charcoal/70 italic mb-6">{t.text}</p>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-olive/10 rounded-full flex items-center justify-center font-bold text-olive">
+              {t.name[0]}
+            </div>
+            <div>
+              <p className="font-bold text-charcoal text-sm">{t.name}</p>
+              <p className="text-xs text-olive">{t.role}</p>
+            </div>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+{/* ─── OUR PROCESS ─── */}
+<section className="py-24 bg-white">
+  <div className="max-w-6xl mx-auto px-6">
+    <div className="flex flex-col md:flex-row items-center gap-16">
+      <div className="flex-1">
+        <motion.p 
+          variants={fadeUp} initial="hidden" whileInView="visible"
+          className="text-olive text-sm font-semibold uppercase tracking-widest mb-2"
+        >
+          Your Journey
+        </motion.p>
+        <motion.h2 
+          variants={fadeUp} initial="hidden" whileInView="visible" custom={1}
+          className="font-serif text-4xl md:text-5xl font-light text-charcoal mb-8"
+        >
+          How We Bring You The <br />
+          <span className="italic text-olive">Best Experience</span>
+        </motion.h2>
+        
+        <div className="space-y-8">
+          {[
+            { step: "01", title: "Personal Consultation", desc: "We listen to your needs and lifestyle requirements first." },
+            { step: "02", title: "Curated Selection", desc: "We filter the best global properties that match your vision." },
+            { step: "03", title: "Seamless Closing", desc: "Legal checks and paperwork handled with MRICS standards." }
+          ].map((item, i) => (
+            <motion.div 
+              key={i} 
+              variants={fadeUp} initial="hidden" whileInView="visible" custom={i * 0.2}
+              className="flex gap-6"
+            >
+              <span className="text-4xl font-serif italic text-olive/30 font-light">{item.step}</span>
+              <div>
+                <h3 className="text-xl font-bold text-charcoal mb-1">{item.title}</h3>
+                <p className="text-charcoal/60 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+      
+      <motion.div 
+        variants={fadeIn} initial="hidden" whileInView="visible"
+        className="flex-1 relative"
+      >
+        <div className="aspect-[4/5] rounded-4xl overflow-hidden shadow-2xl">
+          <img 
+            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" 
+            alt="Process" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute -bottom-6 -left-6 bg-olive text-white p-8 rounded-3xl hidden md:block shadow-xl">
+          <p className="text-3xl font-bold">100%</p>
+          <p className="text-xs uppercase tracking-widest opacity-80">Transparency</p>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+</section>
 
       {/* ─── CONTACT ─── */}
       <section id="contact" className="py-24 bg-white">
