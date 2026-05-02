@@ -6,24 +6,28 @@ import { FaWhatsapp } from "react-icons/fa";
 import PropertyCard from "../components/PropertyCard";
 import WhatsAppButton from "../components/WhatsAppButton";
 import Link from "next/link"; 
-
 // Reusable animation variants
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: (i = 0) => ({
+  visible: (i: number = 0) => ({ // 'i' ko number type di
     opacity: 1,
     y: 0,
-    transition: { duration: 0.65, delay: i * 0.12, ease: "easeInOut" },
+    transition: { 
+      duration: 0.65, 
+      delay: i * 0.12, 
+      ease: "easeInOut" as const // 'as const' add kiya TypeScript ke liye
+    },
   }),
 };
 
 const fadeIn = {
   hidden: { opacity: 0 },
-  visible: (i = 0) => ({
+  visible: (i: number = 0) => ({ // 'i' ko number type di
     opacity: 1,
     transition: { duration: 0.5, delay: i * 0.1 },
   }),
 };
+
 
 const properties = [
   {
